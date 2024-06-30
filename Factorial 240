@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int factorial(int n) {
+    if (n <= 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+int sumOfDigits(int num) {
+    int sum = 0;
+    while (num > 0 || sum > 9) {
+        if (num == 0) {
+            num = sum;
+            sum = 0;
+        }
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+int main() {
+    int n;
+    scanf("%d", &n);
+int sod = sumOfDigits(n);
+int fact = factorial(sod);
+printf("%d\n", fact);
+return 0;
+}
