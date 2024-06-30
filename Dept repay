@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int p,t,r;
+    scanf("%d%d%d",&p,&t,&r);
+    float r1=p*t*r/100;
+    printf("%.2f\n",r1);
+    float r2=p+r1;
+    printf("%.2f\n",r2);
+    float r3=r1*2/100;
+    printf("%.2f\n",r3);    
+    float r4=r2-r3;
+    printf("%.2f\n",r4);
+    return 0;
+}
