@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int w=sc.nextInt();
+        int a=sc.nextInt();
+        int c=sc.nextInt();
+        int total_weight=75*a+30*c;
+        if(total_weight>w){
+            System.out.println("Boat will drown");
+        }
+        else{
+            System.out.println("Boat is stable");
+        }
+        
+    }
+}
