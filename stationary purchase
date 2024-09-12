@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int quantity=sc.nextInt();
+        int price_per_item=sc.nextInt();
+        int total_amount=quantity*price_per_item;
+        double gst=0.18;
+       if(quantity>200){
+           double discountpercentage=0.20;
+           double discountearned=total_amount*discountpercentage;
+           double total_bill_amount=total_amount-discountearned;
+           double gst_amount=total_bill_amount*gst;
+           double net_total_amount=total_bill_amount+gst_amount;
+           System.out.println("Quantity Ordered "+quantity);
+           System.out.println("Price per item is Rs."+price_per_item);
+           System.out.println("Total Amount = Rs."+total_amount);
+           System.out.println("Discount Earned = Rs."+discountearned);
+           System.out.println("Amount after Discount - Rs."+total_bill_amount);
+           System.out.println("GST - Rs."+gst_amount);
+           System.out.println("Net Amount Payable is Rs."+net_total_amount);        
+       }
+        else{
+            double gst_amount=total_amount*gst;
+            double net_total_amount=total_amount+gst_amount;
+           System.out.println("Quantity Ordered "+quantity);
+           System.out.println("Price per item is Rs."+price_per_item);
+           System.out.println("Total Amount = Rs."+total_amount);
+           System.out.println("GST - Rs."+gst_amount);
+           System.out.println("Net Amount Payable is Rs."+net_total_amount); 
+        }
+        
+    }
+}
