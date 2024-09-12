@@ -1,0 +1,13 @@
+import java.util.Scanner;
+import java.io.IOException;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i = 1; i <= 10; i++) {  // Start from 1 and go up to 10
+            System.out.println(n + " x " + i + " = " + n * i);
+        }
+        sc.close(); 
+    }
+}
