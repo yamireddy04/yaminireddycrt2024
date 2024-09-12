@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        int rem=num%10;
+        if(rem>=5){
+            int add=10-rem;
+            num=num+add;
+            System.out.println(num);
+        }
+        else{
+            num=num-rem;
+            System.out.println(num);
+        }
+    }
+}
