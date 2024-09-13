@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        // Handle the case where n is zero
+        if (n == 0) {
+            System.out.print("ZERO ");
+            sc.close();
+            return;
+        }
+        
+        // Determine the number of digits
+        int temp = n;
+        int digitCount = 0;
+
+        // Count the number of digits in n
+        while (temp > 0) {
+            temp = temp / 10;
+            digitCount++;
+        }
+
+        // Array to store the words for digits
+        String[] words = new String[digitCount];
+        int index = 0;
+
+        // Process each digit and store corresponding words in words array
+        while (n > 0) {
+            int num = n % 10;  // Get the last digit
+            switch (num) {
+                case 0:
+                    words[digitCount - 1 - index] = "ZERO";
+                    break;
+                case 1:
+                    words[digitCount - 1 - index] = "ONE";
+                    break;
+                case 2:
+                    words[digitCount - 1 - index] = "TWO";
+                    break;
+                case 3:
+                    words[digitCount - 1 - index] = "THREE";
+                    break;
+                case 4:
+                    words[digitCount - 1 - index] = "FOUR";
+                    break;
+                case 5:
+                    words[digitCount - 1 - index] = "FIVE";
+                    break;
+                case 6:
+                    words[digitCount - 1 - index] = "SIX";
+                    break;
+                case 7:
+                    words[digitCount - 1 - index] = "SEVEN";
+                    break;
+                case 8:
+                    words[digitCount - 1 - index] = "EIGHT";
+                    break;
+                case 9:
+                    words[digitCount - 1 - index] = "NINE";
+                    break;
+            }
+            index++;
+            n = n / 10;  // Remove the last digit
+        }
+
+        // Print the words in the correct order
+        for (String word : words) {
+            System.out.print(word + " ");
+        }
+
+        sc.close();  // Close the scanner
+    }
+}
