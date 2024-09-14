@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int totalStudents = sc.nextInt();
+        int numberOfTeams = sc.nextInt();
+        int studentsPerTeam = totalStudents / numberOfTeams;
+        int studentsLeftOut = totalStudents % numberOfTeams;
+        System.out.println("The number of students in each team is " + studentsPerTeam + " and left out is " + studentsLeftOut);
+        sc.close();
+    }
+}
