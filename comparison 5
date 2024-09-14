@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        sc.nextLine(); 
+        for (int i = 0; i < t; i++) {
+            String line = sc.nextLine(); 
+            String[] parts = line.split(" "); 
+            int a = Integer.parseInt(parts[0]);
+            String operator = parts[1];
+            int b = Integer.parseInt(parts[2]);
+            boolean result = false;
+            switch (operator) {
+                case "<":
+                    result = a < b;
+                    break;
+                case "<=":
+                    result = a <= b;
+                    break;
+                case ">":
+                    result = a > b;
+                    break;
+                case ">=":
+                    result = a >= b;
+                    break;
+                case "==":
+                    result = a == b;
+                    break;
+                case "!=":
+                    result = a != b;
+                    break;
+                default:
+                    System.out.println("Invalid operator");
+                    continue;
+            }
+            if (result) {
+                System.out.println("Right");
+            } else {
+                System.out.println("Wrong");
+            }
+        }
+
+        sc.close(); 
+    }
+}
