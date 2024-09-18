@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements:");
+        int n = sc.nextInt();
+        sc.nextLine(); 
+        String[] arr = new String[n];
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextLine();
+        }
+        List<String> arrayList = new ArrayList<>();
+        for (String element :arr) {
+            arrayList.add(element);
+        }
+        System.out.println("Unique elements are:");
+        LinkedHashSet<String> uniqueElements = new LinkedHashSet<>(arrayList);
+        for (String element : uniqueElements) {
+            System.out.println(element);
+        }
+    }
+}
