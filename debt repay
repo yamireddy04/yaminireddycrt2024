@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class AliceBusiness {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double principal = sc.nextDouble();
+        double rate = sc.nextDouble();
+        double time = sc.nextDouble();
+        double interest = principal * (rate / 100) * time;
+        double totalAmount = principal + interest;
+        double discount = interest * 0.02;
+        double amountGivenBack = interest - discount;
+        double finalTotalAmount = principal + amountGivenBack;
+        System.out.printf("%.2f%n", interest);
+        System.out.printf("%.2f%n", totalAmount);
+        System.out.printf("%.2f%n", discount);
+        System.out.printf("%.2f%n", finalTotalAmount);
+        sc.close();
+    }
+}
