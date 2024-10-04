@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class CruiseParty {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] entry = new int[n];
+        int[] exit = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            entry[i] = sc.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            exit[i] = sc.nextInt();
+        }
+        int maxGuests = 0;
+        int currentGuests = 0;
+        for (int i = 0; i < n; i++) {
+            currentGuests += entry[i];
+            currentGuests -= exit[i];
+            maxGuests = Math.max(maxGuests, currentGuests);
+        }
+        System.out.println(maxGuests);
+    }
+}
