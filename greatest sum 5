@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class RowColumnSums {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read the size of the matrix
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+
+        // Create the matrix
+        int[][] matrix = new int[rows][cols];
+
+        // Read the elements of the matrix
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+
+        // Calculate row and column sums
+        int[] rowSums = new int[rows];
+        int[] colSums = new int[cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                rowSums[i] += matrix[i][j];
+                colSums[j] += matrix[i][j];
+            }
+        }
+
+        // Find the greatest row and column sums
+        int greatestRowSum = rowSums[0];
+        int greatestColSum = colSums[0];
+        int greatestRowIndex = 0;
+        int greatestColIndex = 0;
+
+        for (int i = 1; i < rows; i++) {
+            if (rowSums[i] > greatestRowSum) {
+                greatestRowSum = rowSums[i];
+                greatestRowIndex = i;
+            }
+        }
+
+        for (int j = 1; j < cols; j++) {
+            if (colSums[j] > greatestColSum) {
+                greatestColSum = colSums[j];
+                greatestColIndex = j;
+            }
+        }
+
+        // Print the results
+        for (int sum : rowSums) {
+            System.out.print(sum + " ");
+        }
+        System.out.println();
+        System.out.println( "Row " + (greatestRowIndex + 1) );
+        
+        for (int sum : colSums) {
+            System.out.print(sum + " ");
+        }
+        System.out.println();
+        System.out.println( "Column " + (greatestColIndex + 1) );
+    }
+}
