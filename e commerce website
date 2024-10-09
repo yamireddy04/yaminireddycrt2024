@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class CountUniqueProductTags {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read the sales sequence
+        String salesSequence = sc.nextLine();
+
+        // Create an array to store the count of each product tag
+        int[] tagCount = new int[52];  // 26 for lowercase + 26 for uppercase
+
+        // Iterate over each character in the sales sequence
+        for (char tag : salesSequence.toCharArray()) {
+            if (Character.isLowerCase(tag)) {
+                tagCount[tag - 'a']++;  // Handle lowercase (a-z)
+            } else {
+                tagCount[tag - 'A' + 26]++;  // Handle uppercase (A-Z) using offset of 26
+            }
+        }
+
+        // Count the number of product tags that occur only once
+        int count = 0;
+        for (int value : tagCount) {
+            if (value == 1) {
+                count++;
+            }
+        }
+
+        // Print the result
+        System.out.println(count);
+    }
+}
