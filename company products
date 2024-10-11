@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class ProductTagGenerator {
+    public static void main(String[] args) {
+        // Create a Scanner object to take input from the user
+        Scanner scanner = new Scanner(System.in);
+        String productType = scanner.nextLine(); // Read user input
+        
+        String tag = generateTag(productType);
+        System.out.println(tag);
+        
+        // Close the scanner
+        scanner.close();
+    }
+
+    public static String generateTag(String productType) {
+        StringBuilder tag = new StringBuilder();
+        
+        int length = productType.length();
+        
+        for (int i = 0; i < length; i += 2) {
+            // Check if there's a pair to process
+            if (i + 1 < length) {
+                char first = productType.charAt(i);
+                char second = productType.charAt(i + 1);
+                
+                // Append the lexicographically larger character to the tag
+                if (first < second) {
+                    tag.append(second);
+                } else {
+                    tag.append(first);
+                }
+            } else {
+                // If there's an unpaired character, append it directly
+                tag.append(productType.charAt(i));
+            }
+        }
+        
+        return tag.toString();
+    }
+}
