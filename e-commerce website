@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class DeliveryRequest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read the delivery request string
+        String requestString = sc.nextLine();
+
+        // Find the smallest and largest ASCII values
+        char smallestChar = requestString.charAt(0);
+        char largestChar = requestString.charAt(0);
+
+        for (char c : requestString.toCharArray()) {
+            if (c < smallestChar) {
+                smallestChar = c;
+            }
+            if (c > largestChar) {
+                largestChar = c;
+            }
+        }
+
+        // Calculate the total number of products delivered
+        int totalProducts = smallestChar + largestChar;
+
+        // Print the result
+        System.out.println(totalProducts);
+    }
+}
