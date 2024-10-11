@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        String[] words = str.split(" ");
+        int maxLength = 0;
+        String longestWord = "";
+        for (String word : words) {
+            if (word.length() > maxLength) {
+                maxLength = word.length();
+                longestWord = word;
+            }
+        }
+        System.out.println(maxLength);
+    }
+}
