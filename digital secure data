@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        char ch = str.charAt(0);
+        int key = Integer.parseInt(sc.next());
+        
+        if (Character.isUpperCase(ch)) {
+            ch = (char) ((ch - 'A' + key) % 26 + 'A');
+        } else if (Character.isLowerCase(ch)) {
+            ch = (char) ((ch - 'a' + key) % 26 + 'a');
+        }
+        
+        System.out.println(ch);
+    }
+}
